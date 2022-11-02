@@ -181,7 +181,7 @@ body {
   grid-column-start: 1;
   grid-column-end: 3;
   height: 100%;
-  background-image: url('./assets/images/image-web-3-desktop.jpg');
+  background-image: url('./images/image-web-3-desktop.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -315,7 +315,7 @@ body {
 @media (max-width: 481px) {
   .hero_img {
     height: 300px;
-    background-image: url('./assets/images/image-web-3-mobile.jpg');
+    background-image: url('./images/image-web-3-mobile.jpg');
   }
   .main {
     display: flex;
@@ -349,13 +349,13 @@ body {
   column-gap: 10px;
 }
 .mini_container:nth-child(1) .mini_img {
-  background-image: url('./assets/images/image-retro-pcs.jpg');
+  background-image: url('./images/image-retro-pcs.jpg');
 }
 .mini_container:nth-child(2) .mini_img {
-  background-image: url('./assets/images/image-top-laptops.jpg');
+  background-image: url('./images/image-top-laptops.jpg');
 }
 .mini_container:nth-child(3) .mini_img {
-  background-image: url('./assets/images/image-gaming-growth.jpg');
+  background-image: url('./images/image-gaming-growth.jpg');
 }
 .mini_img {
   grid-column-start: 1;

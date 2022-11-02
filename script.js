@@ -1,3 +1,4 @@
+// select elements
 const menuIcon = document.getElementById('hambergurs');
 const closeMenuIcon = document.getElementById('close_menu');
 const menu = document.getElementById('mobile_menu');
