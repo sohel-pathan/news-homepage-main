@@ -1,0 +1,389 @@
+/* ------------------ */
+/*   reset css        */
+/* ------------------ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h3,
+p {
+  margin: 0;
+}
+/* remove ul margin padding  */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%; /* 1rem equal to 10px */
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button {
+  font: inherit;
+}
+
+/* css varibles */
+:root {
+  /* Primary */
+  --Soft-orange: hsl(35, 77%, 62%);
+  --Soft-red: hsl(5, 85%, 63%);
+  /* Neutral */
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  background-color: var(--Off-white);
+  text-rendering: optimizeSpeed;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+}
+
+/* ------------------------------- */
+/*     global css utility classes  */
+/* ------------------------------- */
+.wrapper {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  /* border: 2px solid red; */
+}
+.open_menu_icon,
+.close_menu_icon {
+  display: none;
+}
+/* --------------------------------- */
+/*           Header                  */
+/* --------------------------------- */
+
+/* navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+/* logo */
+.logo_container {
+  width: 50px;
+  margin-right: auto;
+}
+/* nvabar links */
+.navbar_link_list {
+  display: flex;
+  align-items: center;
+}
+.navbar_link_item {
+  margin-left: 25px;
+}
+.link {
+  text-decoration: none;
+  color: var(--Dark-grayish-blue);
+  font-weight: 500;
+}
+.link:hover {
+  color: var(--Soft-orange);
+  transition: all, 0.25s;
+}
+
+/* media queries for navbar */
+@media (max-width: 570px) {
+  .open_menu_icon {
+    display: block;
+    width: 40px;
+    z-index: 999;
+  }
+
+  .close_menu_icon {
+    display: block;
+    display: flex;
+    align-self: flex-end;
+    width: 40px;
+    margin-right: 10px;
+    margin-top: 25px;
+  }
+
+  .navbar_link_list_container {
+    position: absolute;
+    top: -1000px;
+  }
+
+  .navbar_link_list_container.active {
+    min-height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999999;
+    backdrop-filter: brightness(50%);
+  }
+
+  .for_mobile_menu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Off-white);
+    position: absolute;
+    right: 0px;
+    width: 70%;
+    height: 100%;
+  }
+
+  .navbar_link_list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 70px;
+  }
+
+  .navbar_link_item {
+    margin-bottom: 25px;
+  }
+
+  .link {
+    font-weight: 700;
+    font-size: 1.9rem;
+  }
+}
+/* main */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.hero_img {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 100%;
+  background-image: url('./assets/images/image-web-3-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.main_heading {
+  color: var(--Very-dark-blue);
+  font-size: 5rem;
+  font-weight: 800;
+}
+.hero_description {
+  display: flex;
+  flex-direction: column;
+}
+.hero_description > .description {
+  padding-top: 10px;
+  padding-bottom: 60px;
+}
+.hero_description > .button {
+  border: none;
+  outline: none;
+  height: 50px;
+  background-color: var(--Soft-red);
+  width: 200px;
+  font-weight: 700;
+  color: var(--Off-white);
+}
+.hero_description > .button:hover {
+  transition: all, 0.25s;
+  background-color: var(--Very-dark-blue);
+}
+.aside {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding: 15px;
+  background-color: var(--Very-dark-blue);
+}
+
+.aside_heading {
+  font-size: 3rem;
+  color: var(--Soft-orange);
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.aside_div {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--Grayish-blue);
+}
+
+.aside_div:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.aside_mini_heading {
+  color: var(--Off-white);
+  cursor: pointer;
+  font-size: 1.9rem;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.aside_div > .description {
+  color: var(--Grayish-blue);
+}
+
+.aside_mini_heading:hover {
+  transition: all, 0.25s;
+  color: var(--Soft-orange);
+}
+
+.description {
+  color: var(--Dark-grayish-blue);
+}
+/* media queries for main section */
+@media (max-width: 1024px) {
+  .main {
+    gap: 10px;
+  }
+  .aside {
+    padding: 10px;
+  }
+  .aside_heading {
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  .main_heading {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .aside_heading {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .hero_img {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .aside {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    padding: 20px;
+  }
+  .hero_heding {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .hero_description {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+  }
+  .hero_description > .description {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+  .hero_description > .button {
+    align-self: flex-end;
+    margin-right: 20px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 481px) {
+  .hero_img {
+    height: 300px;
+    background-image: url('./assets/images/image-web-3-mobile.jpg');
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+  }
+  .hero_description > .description {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+  .hero_description > .button {
+    align-self: flex-start;
+    height: 45px;
+  }
+  .hero_description {
+    padding-bottom: 30px;
+  }
+}
+
+/* mini_container_section */
+.mini_container_section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 130px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.mini_container {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  column-gap: 10px;
+}
+.mini_container:nth-child(1) .mini_img {
+  background-image: url('./assets/images/image-retro-pcs.jpg');
+}
+.mini_container:nth-child(2) .mini_img {
+  background-image: url('./assets/images/image-top-laptops.jpg');
+}
+.mini_container:nth-child(3) .mini_img {
+  background-image: url('./assets/images/image-gaming-growth.jpg');
+}
+.mini_img {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.mini_div_description {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+.mini_div_description > .heading {
+  font-size: 3rem;
+  color: var(--Grayish-blue);
+}
+.mini_div_description > .mini_heading {
+  color: var(--Very-dark-blue);
+  font-weight: 800;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.mini_div_description > .mini_heading:hover {
+  transition: all 0.25s;
+  color: var(--Soft-red);
+}
