@@ -103,7 +103,7 @@ body {
 .link {
   text-decoration: none;
   color: var(--Dark-grayish-blue);
-  font-weight: 500;
+  font-weight: 700;
 }
 .link:hover {
   color: var(--Soft-orange);
@@ -172,10 +172,10 @@ body {
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-auto-rows: auto;
-  gap: 20px;
-  padding-bottom: 20px;
+  gap: 25px;
+  padding-bottom: 50px;
 }
 .hero_img {
   grid-column-start: 1;
@@ -186,27 +186,44 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+.hero_text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  gap: 20px;
+}
 .main_heading {
   color: var(--Very-dark-blue);
   font-size: 5rem;
   font-weight: 800;
+  height: 100%;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 .hero_description {
   display: flex;
   flex-direction: column;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .hero_description > .description {
   padding-top: 10px;
-  padding-bottom: 60px;
+  margin-bottom: auto;
 }
 .hero_description > .button {
   border: none;
   outline: none;
+  cursor: pointer;
   height: 50px;
-  background-color: var(--Soft-red);
   width: 200px;
-  font-weight: 700;
+  font-weight: 500;
+  background-color: var(--Soft-red);
   color: var(--Off-white);
+  letter-spacing: 2px;
 }
 .hero_description > .button:hover {
   transition: all, 0.25s;
@@ -256,97 +273,73 @@ body {
 .description {
   color: var(--Dark-grayish-blue);
 }
-/* media queries for main section */
-@media (max-width: 1024px) {
+@media (max-width: 866px) {
   .main {
-    gap: 10px;
-  }
-  .aside {
-    padding: 10px;
-  }
-  .aside_heading {
-    padding-bottom: 5px;
-    padding-top: 5px;
-  }
-  .main_heading {
-    font-size: 4rem;
-  }
-}
-@media (max-width: 768px) {
-  .main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .aside_heading {
-    padding-bottom: 10px;
-    padding-top: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
   }
   .hero_img {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .hero_text {
     grid-column-start: 1;
     grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero_description > .description {
+    padding-bottom: 25px;
   }
   .aside {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 5;
     grid-row-start: 3;
+    grid-row-end: 4;
     padding: 20px;
-  }
-  .hero_heding {
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
-  .hero_description {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    display: flex;
-  }
-  .hero_description > .description {
-    padding-top: 10px;
-    padding-bottom: 40px;
-  }
-  .hero_description > .button {
-    align-self: flex-end;
-    margin-right: 20px;
-    height: 40px;
   }
 }
 
-@media (max-width: 481px) {
+@media (max-width: 560px) {
   .hero_img {
     height: 300px;
     background-image: url('./images/image-web-3-mobile.jpg');
   }
+  .hero_text {
+    padding-bottom: 20px;
+  }
   .main {
     display: flex;
     flex-direction: column;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
   }
-  .hero_description > .description {
-    padding-top: 0;
+  .main_heading {
     padding-bottom: 20px;
   }
-  .hero_description > .button {
-    align-self: flex-start;
-    height: 45px;
-  }
-  .hero_description {
-    padding-bottom: 30px;
+  .aside_heading {
+    padding-bottom: 0;
   }
 }
 
 /* mini_container_section */
 .mini_container_section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 130px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 25px;
   margin-bottom: 20px;
-  gap: 20px;
 }
 .mini_container {
   display: grid;
   grid-template-columns: 100px 1fr;
   column-gap: 10px;
+  min-height: 140px;
 }
 .mini_container:nth-child(1) .mini_img {
   background-image: url('./images/image-retro-pcs.jpg');
@@ -371,7 +364,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 5px;
 }
 .mini_div_description > .heading {
   font-size: 3rem;
@@ -386,4 +378,16 @@ body {
 .mini_div_description > .mini_heading:hover {
   transition: all 0.25s;
   color: var(--Soft-red);
+}
+.mini_div_description > .description {
+  padding-bottom: 8px;
+}
+/* attribution */
+.attribution {
+  border-top: 1px solid var(--Very-dark-blue);
+  text-align: center;
+  padding: 15px 0;
+  font-weight: 700;
+  line-height: 1.6;
+  font-size: 1.6rem;
 }
