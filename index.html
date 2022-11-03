@@ -26,7 +26,7 @@
   </head>
   <body>
     <!-- header -->
-    <header class="wrapper header">
+    <header class="wrapper header" id="header">
       <!-- navbar -->
       <nav class="navbar">
         <!-- logo -->
@@ -34,19 +34,16 @@
           <a href="/"> <img src="./images/logo.svg" alt="Logo" /></a>
         </div>
         <!-- navbar list -->
-        <div class="navbar_link_list_container" id="mobile_menu">
+        <div class="navbar_link_list_container" id="menu">
           <!-- close menu icon for small screen devices -->
-          <div class="for_mobile_menu">
-            <div class="close_menu_icon" id="close_menu">
-              <img src="./images/icon-menu-close.svg" />
-            </div>
+          <div class="mobile_menu">
             <!-- navbar links list -->
             <ul class="navbar_link_list" role="list">
               <li class="navbar_link_item">
                 <a href="#" class="link">Home</a>
               </li>
               <li class="navbar_link_item">
-                <a href="#" class="link">New</a>
+                <a href="#new" class="link">New</a>
               </li>
               <li class="navbar_link_item">
                 <a href="#" class="link">Popular</a>
@@ -55,14 +52,17 @@
                 <a href="#" class="link">Trending</a>
               </li>
               <li class="navbar_link_item">
-                <a href="#" class="link">Categories</a>
+                <a href="#categories" class="link">Categories</a>
               </li>
             </ul>
           </div>
         </div>
         <!-- open navbar icon for small screen -->
-        <div class="open_menu_icon" id="hambergurs">
-          <img src="./images/icon-menu.svg" />
+        <div class="menu_icon" id="hambergur">
+          <img
+            data-image="open"
+            src="./images/icon-menu.svg"
+            id="hambergur_icon" />
         </div>
       </nav>
     </header>
@@ -83,7 +83,7 @@
         </div>
       </div>
 
-      <div class="aside">
+      <div class="aside" id="new">
         <h3 class="aside_heading">NEW</h3>
         <div class="aside_div">
           <h3 class="aside_mini_heading">Hydrogen VS Electric Cars</h3>
@@ -109,7 +109,7 @@
         </div>
       </div>
     </main>
-    <div class="wrapper mini_container_section">
+    <div class="wrapper mini_container_section" id="categories">
       <div class="mini_container">
         <div class="mini_img"></div>
         <div class="mini_div_description">

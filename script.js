@@ -1,26 +1,34 @@
 // select elements
-const menuIcon = document.getElementById('hambergurs');
-const closeMenuIcon = document.getElementById('close_menu');
-const menu = document.getElementById('mobile_menu');
+const hambergur = document.getElementById('hambergur_icon');
+const menu = document.getElementById('menu');
 
-// open menu
-menuIcon.addEventListener('click', (e) => {
-  menu.classList.add('active');
+// toggle menu
+hambergur.addEventListener('click', () => {
+  menu.classList.toggle('active');
+
+  // toogle between menu icon and close menu icon
+  if (hambergur.dataset.image == 'open') {
+    hambergur.dataset.image = 'close';
+    hambergur.src = './images/icon-menu-close.svg';
+  } else {
+    hambergur.dataset.image = 'open';
+    hambergur.src = './images/icon-menu.svg';
+  }
 });
-// close menu
-closeMenuIcon.addEventListener('click', () => {
-  menu.classList.remove('active');
-});
-// close menu whwen user click on link or outside of navbar
+
+// close menu when user click on closeicon, link and outside of navbar
 menu.addEventListener('click', (e) => {
   let target = e.target;
-  if (target.classList.contains('link') || target.id === 'mobile_menu') {
-    menu.classList.remove('active');
+  if (target.classList.contains('link') || target.id === 'menu') {
+    hambergur.src = './images/icon-menu.svg';
+    hambergur.dataset.image = 'open';
+    return menu.classList.remove('active');
   }
-  return;
 });
 
-// close menu on scroll
+// close menu on scrollY
 window.onscroll = () => {
-  return menu.classList.remove('active');
+  hambergur.src = './images/icon-menu.svg';
+  hambergur.dataset.image = 'open';
+  menu.classList.remove('active');
 };
