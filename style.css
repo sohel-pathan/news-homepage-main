@@ -73,9 +73,11 @@ body {
   padding: 0 15px;
   position: relative;
 }
-.menu_icon {
+/* hide menu bars */
+.bar_container {
   display: none;
 }
+
 /* --------------------------------- */
 /*           Header                  */
 /* --------------------------------- */
@@ -116,12 +118,28 @@ body {
 
 /* media queries for navbar */
 @media (max-width: 570px) {
-  .menu_icon {
-    display: block;
-    width: 40px;
+  /* menu handle bars */
+  .bar_container {
+    display: inline-block;
+    cursor: pointer;
     z-index: 99999999999;
   }
-
+  .bar {
+    background-color: black;
+    height: 3px;
+    width: 34px;
+    margin: 4px 0;
+    transition: 0.2s;
+  }
+  #hamburger.active .bar_2 {
+    opacity: 0;
+  }
+  #hamburger.active .bar_1 {
+    transform: translate(0, 7px) rotate(-45deg);
+  }
+  #hamburger.active .bar_3 {
+    transform: translate(0, -7px) rotate(45deg);
+  }
   .navbar_link_list_container {
     position: absolute;
     top: -1000px;
